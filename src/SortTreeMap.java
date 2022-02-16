@@ -19,6 +19,7 @@ public class SortTreeMap {
         return list;
     } */
 
+    //make comparator
     public List<Entry<StringBuilder, Integer>> sortByValue(Map<StringBuilder, Integer> data){
         List<Entry<StringBuilder, Integer>> list = new ArrayList<>(data.entrySet());
         list.sort(Entry.comparingByValue());

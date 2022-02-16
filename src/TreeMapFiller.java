@@ -26,7 +26,7 @@ public class TreeMapFiller {
             System.out.println(ex.getMessage());
         }
     }
-
+    //optimization
     private void filler(StringBuilder word){
         if(data.containsKey(word))
             data.replace(word, data.get(word) + 1);
@@ -37,5 +37,8 @@ public class TreeMapFiller {
 
     public Map<StringBuilder, Integer> getTreeMap(){
         return data;
+    }
+    public int getTotalCounter(){
+        return totalCounter;
     }
 }
