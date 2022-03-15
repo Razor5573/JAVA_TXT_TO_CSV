@@ -1,28 +1,33 @@
-import java.io.*;
 import java.util.*;
 import java.lang.StringBuilder;
 
-import java.util.Map.Entry;
-
 public class SortTreeMap {
-    /*Comparator<Integer> cmp = new Comparator<Integer>() {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o2.compareTo(o1);
-        }
-    }; */
+    public TreeMap<StringBuilder, Integer> SortByValue(TreeMap <StringBuilder, Integer> data) {
+        TreeMap <StringBuilder, Integer> sortedData;
+        Comparator<StringBuilder> cmp = new Comparator<StringBuilder>() {
+            @Override
+            public int compare(StringBuilder o1, StringBuilder o2) {
+                if (data.get(o1).equals(data.get(o2)))
+                {
+                    //System.out.println("key1: " + data.get(o1) + " word1: " + o1 + " \nkey2: " + data.get(o2) + " word2: " + o2 + "\n\n");
+                    return 0;
+                }
 
-    /*public ArrayList<Integer> sortByValue(TreeMap<StringBuilder, Integer> data){
-        ArrayList<Integer> list = new ArrayList<Integer>(data.values());
-        list.sort(cmp);
-        System.out.println(list);
-        return list;
-    } */
+                if (data.get(o1).compareTo(data.get(o2)) > 0)
+                {
+                    //System.out.println("key1: " + data.get(o1) + " word1: " + o1 + " \nkey2: " + data.get(o2) + " word2: " + o2 + "\n\n");
+                    return -1;
+                }
 
-    //make comparator
-    public List<Entry<StringBuilder, Integer>> sortByValue(Map<StringBuilder, Integer> data){
-        List<Entry<StringBuilder, Integer>> list = new ArrayList<>(data.entrySet());
-        list.sort(Entry.comparingByValue());
-        return list;
+                else {
+                    //System.out.println("key1: " + data.get(o1) + " word1: " + o1 + " \nkey2: " + data.get(o2) + " word2: " + o2 + "\n\n");
+                    return 1;
+                }
+            }
+        };
+
+        sortedData = new TreeMap<>(cmp);
+
+        return sortedData;
     }
 }

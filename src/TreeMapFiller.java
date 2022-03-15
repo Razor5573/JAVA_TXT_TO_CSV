@@ -1,13 +1,12 @@
 import java.io.*;
 import java.lang.StringBuilder;
 import java.util.TreeMap;
-import java.util.Map;
 
 public class TreeMapFiller {
-    private StringBuilder word = new StringBuilder();
-    private Map<StringBuilder, Integer> data = new TreeMap();
-    private int totalCounter;
-    private final int firstInput = 1;
+        private StringBuilder word = new StringBuilder();
+        private TreeMap<StringBuilder, Integer> data = new TreeMap();
+        private int totalCounter;
+        private final int firstInput = 1;
 
     public void read(String fileName) {
         try(FileReader reader = new FileReader(fileName)){
