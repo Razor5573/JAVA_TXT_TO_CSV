@@ -13,13 +13,7 @@ public class SortTreeMap {
 
         sortedData = new TreeMap<>(cmp);
         sortedData.putAll(data);
-        for(Map.Entry<StringBuilder, Integer> entry : sortedData.entrySet()) {
-            StringBuilder key = entry.getKey();
-            Integer value = entry.getValue();
-
-            System.out.println(key + " => " + value);
-        }
-
+        
         return sortedData;
     }
 }
