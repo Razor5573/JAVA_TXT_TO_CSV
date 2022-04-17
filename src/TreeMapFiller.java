@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class TreeMapFiller {
         private StringBuilder word = new StringBuilder();
-        private TreeMap<StringBuilder, Integer> data = new TreeMap();
+        private final TreeMap<StringBuilder, Integer> data = new TreeMap();
         private int totalCounter;
         private final int firstInput = 1;
 
