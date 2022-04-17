@@ -25,14 +25,13 @@ public class TreeMapFiller {
             System.out.println(ex.getMessage());
         }
     }
-    //optimization
-    private void filler(StringBuilder word){
-        if(data.containsKey(word))
-            data.replace(word, data.get(word) + 1);
-        else
-            data.put(word, firstInput);
-        totalCounter++;
-    }
+        
+    private void filler(StringBuilder word) {
+            Integer currentValue = data.putIfAbsent(word, firstInput);
+            if(currentValue != null)
+                data.put(word, currentValue + 1);
+            totalCounter++;
+        }
 
     public Map<StringBuilder, Integer> getTreeMap(){
         return data;
